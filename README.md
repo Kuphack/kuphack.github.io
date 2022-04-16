@@ -1,1 +1,1 @@
-<a href="https://kuphack.cc/">kuphack.cc</a>
+<a href="https://kuphack.github.io/">kuphack.cc</a>
