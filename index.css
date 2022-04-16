@@ -1,0 +1,24 @@
+.content .text {
+    text-align: left;
+    margin: 30px;
+    width: 40%;
+    position: absolute;
+    top: calc(325px + 100vw * 0.1);/*500px;/*50%;*/
+    transform: translateY(-50%);
+}
+
+.content {
+    height: 85%;
+}
+
+@media (max-height: 550px) {
+    .content .text {
+        top: calc(225px + 100vw * 0.1);
+    }
+}
+
+@media (max-width: 544px) {
+    .content {
+        max-height: 700px;
+    }
+}

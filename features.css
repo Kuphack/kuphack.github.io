@@ -1,0 +1,45 @@
+.content .text {
+    text-align: justify;
+    float: left;
+    margin: 30px;
+    width: 50%;
+}
+.content {
+    height: 190%;
+}
+
+.content .text h1 {
+    font-size: 80px;
+    margin-bottom: 100px;
+    font-weight: 400;
+}
+
+.content .text h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    font-weight: 100;
+}
+
+.content .text div div {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 35px;
+    padding: 10px;
+}
+
+.content .text h3 {
+    font-size: 40px;
+    left: 220px;
+}
+.content .text span {
+    left: 220px;
+}
+
+.content img {
+    position: relative;
+    width: 500px;
+    object-fit: cover;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
