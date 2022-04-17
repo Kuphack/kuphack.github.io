@@ -101,7 +101,7 @@ class Head {
         if (this.intersects(o)) {
           
           let deg = atan2(this.y-o.y, this.x-o.x);
-          let speed = Math.max(Math.abs(this.velX), Math.abs(this.velY));
+          let speed = Math.max(1, Math.max(Math.abs(this.velX), Math.abs(this.velY)));
           
           this.velX = cos(deg)*speed;
           this.velY = sin(deg)*speed;
