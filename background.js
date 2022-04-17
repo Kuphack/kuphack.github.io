@@ -87,12 +87,36 @@ class Head {
 
       this.x += mouseX-oldMX;//mouseX-this.size/2;
       this.y += mouseY-oldMY;//mouseY-this.size/2;
+
     } else {
       this.velX *= 0.99;
       this.velY *= 0.99;
 
       this.x += this.velX;
       this.y += this.velY;
+
+      for (let i = 0; i < objects.length; i++) {
+        let o = objects[i];
+  
+        if (this.intersects(o)) {
+          
+          let deg = atan2(this.y-o.y, this.x-o.x);
+          let speed = Math.max(Math.abs(this.velX), Math.abs(this.velY));
+          
+          this.velX = cos(deg)*speed;
+          this.velY = sin(deg)*speed;
+  
+          o.velX += cos(deg+180)*(speed/2);
+          o.velY += sin(deg+180)*(speed/2);
+  
+          this.x += this.velX;
+          this.y += this.velY;
+          if (locked != o) {
+            o.x += o.velX;
+            o.y += o.velY;
+          }
+        }
+      }
     }
 
     if (this.x < 0) {
@@ -111,6 +135,10 @@ class Head {
       this.velY = -this.velY;
       this.y = canvas.height-1-this.size;
     }
+  }
+
+  intersects(o) {
+    return o != this && this.x+this.size >= o.x && this.x < o.x+o.size && this.y+this.size >= o.y && this.y < o.y+o.size;
   }
 
   display() {
