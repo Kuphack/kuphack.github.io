@@ -1,30 +1,30 @@
-.content .text {
-    text-align: justify;
+.text {
     float: left;
     margin: 30px;
     width: 50%;
 }
 .content {
-    height: 165%;
+    display: contents;
 }
 
-.content .text h1 {
+.text h1 {
     font-size: 80px;
     margin-bottom: 100px;
     font-weight: 400;
 }
 
-.content .text h2 {
+.text h2 {
     font-size: 60px;
     margin-bottom: 20px;
     font-weight: 100;
 }
 
-.content .text div div {
+.text div div {
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 35px;
     padding: 10px;
+    min-width: 300px;
 }
 
 .content .text h3 {
@@ -35,11 +35,38 @@
     left: 220px;
 }
 
-.content img {
-    position: relative;
+.content .images img {
     width: 500px;
     object-fit: cover;
     float: right;
     margin-top: 20px;
     margin-right: 20px;
+
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+@media (max-width: 1200px) {
+    .content .images img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 965px) {
+    .content .images img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 660px) {
+    .content .images img {
+        float: left;
+        width: 500px;
+    }
+}
+
+@media (max-width: 400px) {
+    .content .images img {
+        width: 300px;
+    }
 }
