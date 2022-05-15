@@ -10,13 +10,24 @@
      user-select: none;       
 }
 
-@media (max-width: 544px) {
-    nav {
-        width: 50%;
-        font-size: 14px;
-    }
+@media (max-width: 360px) {
     nav #download {
         display: none;
+    }
+}
+@media (max-width: 540px) {
+    nav {
+        font-size: 0px;
+    }
+
+    nav li i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 295px) {
+    nav li i {
+        font-size: 15px;
     }
 }
 
