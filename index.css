@@ -7,6 +7,12 @@
     transform: translateY(-50%);
 }
 
+body { /* Disable Scrolling because of p5js*/
+    user-select: none;
+    touch-action: none;
+    -webkit-user-select: none;
+}
+
 .content {
     height: 85%;
 }
