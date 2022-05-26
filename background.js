@@ -7,17 +7,33 @@ let oldMX = Number.MIN_VALUE, oldMY = Number.MIN_VALUE;
 
 function setup() {
 
-  images.push(loadImage('https://crafatar.com/avatars/a1ce5c43-55ca-4ada-a605-cb6bc7928994?overlay')); // Kup1995
-  images.push(loadImage('https://crafatar.com/avatars/99f2d35c-376c-42ee-8d32-10206cfd3ce0?overlay')); // Boxeyy
-  images.push(loadImage('https://crafatar.com/avatars/a376fb62-ce3f-42f8-ae85-0e5d8a9cd527?overlay')); // Cytrii
-  images.push(loadImage('https://crafatar.com/avatars/00b59d31-f84f-486d-b29b-7c37b60a0be0?overlay')); // Vaapukkax
-  images.push(loadImage('https://crafatar.com/avatars/dcbbf0a5-c12e-4e8b-ab3d-fcf4f510a6ef?overlay')); // Ramezsushi
-  images.push(loadImage('https://crafatar.com/avatars/9f59a14c-709b-407a-ae6d-604d85b1e729?overlay')); // CommandWizard
+  let uuids = [
+    'a1ce5c43-55ca-4ada-a605-cb6bc7928994', // Kup1995
+    '99f2d35c-376c-42ee-8d32-10206cfd3ce0', // Boxeyy
+    'a376fb62-ce3f-42f8-ae85-0e5d8a9cd527', // Cytrii
+    '00b59d31-f84f-486d-b29b-7c37b60a0be0', // Vaapukkax
+    'dcbbf0a5-c12e-4e8b-ab3d-fcf4f510a6ef', // Ramezsushi
+    '9f59a14c-709b-407a-ae6d-604d85b1e729'  // CommandWizard
+  ];
+
+  for (let i = 0; i < uuids.length; i++) {
+    images.push(loadImage('https://mc-heads.net/head/'+uuids[i].replaceAll("-", "")));
+  }
 
 	canvas = createCanvas(5, 5);
   updateSize();
   canvas.style('z-index', '-1');
 }
+
+function isTouchDevice() {
+  return (('ontouchstart' in window) ||
+     (navigator.maxTouchPoints > 0) ||
+     (navigator.msMaxTouchPoints > 0));
+}
+
+/*function isDarkTheme() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}*/
 
 function windowResized() {
   updateSize();
@@ -54,6 +70,7 @@ function mousePressed() {
   for (let i = objects.length-1; i >= 0; i--) {
     let o = objects[i];
     if (mouseX >= o.x && mouseX < o.x+o.size && mouseY >= o.y && mouseY < o.y+o.size) {
+      objects.push(objects.splice(objects.indexOf(o), 1)[0]);
       locked = o;
       oldMX = mouseX;
       oldMY = mouseY;
@@ -64,29 +81,31 @@ function mousePressed() {
 
 class Head {
 
-  constructor(x) {
-    this.x = x*(canvas.width*0.125)+20;//random(width);
-    this.y = windowHeight < 550 ? 25 : 110;//random(height)-100;
-    this.size = canvas.width*0.1;
+  constructor(index) {
+    this.x = index*(canvas.width*0.145)+20;
+    this.y = windowHeight < 550 ? 20 : 110;
+    this.size = canvas.width*0.12;
+    this.y -= this.size*0.1;
 
     this.velX = 0;
     this.velY = 0;
 
-    this.img = images[objects.length];//random(images);
+    this.img = images[objects.length];
   }
 
   move() {
     if (mouseY == Number.MIN_VALUE) return;
 
-    this.x -= (mouseX-oldMX)*0.01;
-    this.y -= (mouseY-oldMY)*0.01;
-
+    if (!isTouchDevice()) {
+      this.x -= (mouseX-oldMX)*0.01;
+      this.y -= (mouseY-oldMY)*0.01;
+    }
     if (locked == this) {
       this.velX += ((mouseX-oldMX)*0.6-this.velX)*0.5;
-      this.velY += ((mouseY-oldMY)*0.6-this.velY)*0.5;//this.y+this.size/2));
+      this.velY += ((mouseY-oldMY)*0.6-this.velY)*0.5;
 
-      this.x += mouseX-oldMX;//mouseX-this.size/2;
-      this.y += mouseY-oldMY;//mouseY-this.size/2;
+      this.x += mouseX-oldMX;
+      this.y += mouseY-oldMY;
 
     } else {
       this.velX *= 0.99;
@@ -145,6 +164,5 @@ class Head {
     fill(color(200, 200, 200));
     noStroke();
     image(this.img, this.x, this.y, this.size, this.size);
-    //ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 }
