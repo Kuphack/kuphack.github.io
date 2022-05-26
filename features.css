@@ -67,6 +67,6 @@
 
 @media (max-width: 400px) {
     .content .images img {
-        width: 300px;
+        width: min(100vw, 300px);
     }
 }
