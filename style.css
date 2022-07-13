@@ -35,6 +35,13 @@
     }
 }
 
+@media (max-width: 280px) {
+    nav li i {
+        font-size: 13px;
+        margin: 0px;
+    }
+}
+
 #content-wrap {
     padding-bottom: 2.5rem;
 }

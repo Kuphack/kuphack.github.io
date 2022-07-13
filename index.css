@@ -1,7 +1,7 @@
 .content .text {
     text-align: left;
     margin: 30px;
-    width: 40%;
+    width: 70%;
     position: absolute;
     top: calc(325px + 100vw * 0.1);/*500px;/*50%;*/
     transform: translateY(-50%);
@@ -14,7 +14,7 @@ body { /* Disable Scrolling because of p5js*/
 }
 
 .content {
-    height: 85%;
+    height: calc(100% - 200px);
 }
 
 @media (max-height: 550px) {
@@ -23,8 +23,21 @@ body { /* Disable Scrolling because of p5js*/
     }
 }
 
+#legal {
+    font-size: 13px;
+    margin-top: -10px;
+    margin-left: 30px;
+    word-break: keep-all;
+    display: inline-block;
+}
+
+#legal a {
+    color: black;
+}
+
 @media (max-width: 544px) {
-    .content {
-        max-height: 700px;
+
+    #legal {
+        font-size: 12px;
     }
 }
