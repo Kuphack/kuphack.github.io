@@ -83,7 +83,7 @@ class Head {
 
   constructor(index) {
     this.x = index*(canvas.width*0.145)+20;
-    this.y = windowHeight < 550 ? 20 : 110;
+    this.y = windowHeight < 600 ? 20 : 110;
     this.size = canvas.width*0.12;
     this.y -= this.size*0.1;
 

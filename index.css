@@ -14,10 +14,10 @@ body { /* Disable Scrolling because of p5js*/
 }
 
 .content {
-    height: calc(100% - 200px);
+    height: calc(100% - 215px);
 }
 
-@media (max-height: 550px) {
+@media (max-height: 600px) {
     .content .text {
         top: calc(225px + 100vw * 0.1);
     }
@@ -44,6 +44,10 @@ body { /* Disable Scrolling because of p5js*/
 }
 
 @media (max-width: 544px) {
+
+    #description {
+        font-size: 0px;
+    }
 
     #legal {
         font-size: 12px;
