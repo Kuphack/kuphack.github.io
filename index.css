@@ -1,7 +1,7 @@
 .content .text {
     text-align: left;
     margin: 30px;
-    width: 70%;
+    width: 40%;
     position: absolute;
     top: calc(325px + 100vw * 0.1);/*500px;/*50%;*/
     transform: translateY(-50%);
@@ -23,12 +23,20 @@ body { /* Disable Scrolling because of p5js*/
     }
 }
 
-#legal {
-    font-size: 13px;
-    margin-top: -10px;
+#description {
+    font-size: 18px;
+    margin-top: -25px;
     margin-left: 30px;
     word-break: keep-all;
     display: inline-block;
+}
+
+#legal {
+    font-size: 12px;
+    margin-top: -5px;
+    margin-left: 0px;
+    word-break: keep-all;
+    display: absolute;
 }
 
 #legal a {
