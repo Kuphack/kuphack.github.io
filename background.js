@@ -12,7 +12,7 @@ function setup() {
     '99f2d35c-376c-42ee-8d32-10206cfd3ce0', // Boxeyy
     'a376fb62-ce3f-42f8-ae85-0e5d8a9cd527', // Cytrii
     '00b59d31-f84f-486d-b29b-7c37b60a0be0', // Vaapukkax
-    'dcbbf0a5-c12e-4e8b-ab3d-fcf4f510a6ef', // Ramezsushi
+    'd76c3884-1ead-40a9-8f65-461d3b5264e2', // Vinue
     '9f59a14c-709b-407a-ae6d-604d85b1e729'  // CommandWizard
   ];
 
