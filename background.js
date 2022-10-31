@@ -10,10 +10,9 @@ function setup() {
   let uuids = [
     'a1ce5c43-55ca-4ada-a605-cb6bc7928994', // Kup1995
     '99f2d35c-376c-42ee-8d32-10206cfd3ce0', // Boxeyy
-    'a376fb62-ce3f-42f8-ae85-0e5d8a9cd527', // Cytrii
     '00b59d31-f84f-486d-b29b-7c37b60a0be0', // Vaapukkax
-    'd76c3884-1ead-40a9-8f65-461d3b5264e2', // Vinue
-    '9f59a14c-709b-407a-ae6d-604d85b1e729'  // CommandWizard
+    'a376fb62-ce3f-42f8-ae85-0e5d8a9cd527', // Cytrii
+    'dcbbf0a5-c12e-4e8b-ab3d-fcf4f510a6ef' // Ramezsushi
   ];
 
   for (let i = 0; i < uuids.length; i++) {
@@ -31,9 +30,9 @@ function isTouchDevice() {
      (navigator.msMaxTouchPoints > 0));
 }
 
-/*function isDarkTheme() {
+function isDarkMode() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
-}*/
+}
 
 function windowResized() {
   updateSize();
@@ -52,7 +51,7 @@ function updateSize() {
 }
 
 function draw() {
-  background(250);
+  background(isDarkMode() ? 5 : 250);
   for (let i = 0; i < objects.length; i++) {
     let object = objects[i];
     object.move();
@@ -82,10 +81,9 @@ function mousePressed() {
 class Head {
 
   constructor(index) {
-    this.x = index*(canvas.width*0.145)+20;
-    this.y = windowHeight < 600 ? 20 : 110;
-    this.size = canvas.width*0.12;
-    this.y -= this.size*0.1;
+    this.size = canvas.width < 690 ? canvas.height / 6 : canvas.width / 7.5;
+    this.x = canvas.width < 690 ? canvas.width - this.size - 20 : index * (canvas.width / 6.5) + 20;
+    this.y = canvas.width < 690 ? index * (this.size + 10) + 20 : 110 - (270 - this.size) * 0.5;
 
     this.velX = 0;
     this.velY = 0;
@@ -101,8 +99,8 @@ class Head {
       this.y -= (mouseY-oldMY)*0.01;
     }
     if (locked == this) {
-      this.velX += ((mouseX-oldMX)*0.6-this.velX)*0.5;
-      this.velY += ((mouseY-oldMY)*0.6-this.velY)*0.5;
+      this.velX += ((mouseX-oldMX)*0.8-this.velX)*0.35;
+      this.velY += ((mouseY-oldMY)*0.8-this.velY)*0.35;
 
       this.x += mouseX-oldMX;
       this.y += mouseY-oldMY;
@@ -163,6 +161,6 @@ class Head {
   display() {
     fill(color(200, 200, 200));
     noStroke();
-    image(this.img, this.x, this.y, this.size, this.size);
+    image(this.img, this.x, this.y, (this.size/this.img.height)*this.img.width, this.size);
   }
 }
