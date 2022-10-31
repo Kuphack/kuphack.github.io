@@ -1,8 +1,5 @@
 :root {
     overflow-x: hidden;
-    user-select: none;
-    touch-action: none;
-    -webkit-user-select: none;
 }
 
 .content {
