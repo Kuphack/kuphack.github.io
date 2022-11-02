@@ -12,7 +12,7 @@ function setup() {
     '99f2d35c-376c-42ee-8d32-10206cfd3ce0', // Boxeyy
     '00b59d31-f84f-486d-b29b-7c37b60a0be0', // Vaapukkax
     'a376fb62-ce3f-42f8-ae85-0e5d8a9cd527', // Cytrii
-    'dcbbf0a5-c12e-4e8b-ab3d-fcf4f510a6ef' // Ramezsushi
+    '666b59ca-cae9-4d84-84ed-8305de3f62e8' // Ramezsushi (Smelteries)
   ];
 
   for (let i = 0; i < uuids.length; i++) {
