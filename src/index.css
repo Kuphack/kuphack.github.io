@@ -1,0 +1,91 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  background: radial-gradient(circle at center bottom, rgb(0, 43, 56) -10%, rgba(0, 0, 0, 1) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+html, body, #root {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+button, .button {
+  display: inline-block;
+  border-radius: 8px;
+  border: 1px solid white;
+  padding: 0.6em 1.2em;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: none;
+}
+
+.cta {
+  background-color: white;
+  color: black;
+  border: none;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.button:hover {
+  box-shadow: 0 0 10px white;
+}
+
+.cta:hover {
+  box-shadow: 0 0 20px white;
+  transform: scale(1.05);
+}
+
+
+.button:focus, .button:focus-visible,
+.cta:focus, .cta:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
