@@ -1,4 +1,4 @@
-import logo from '/kuphack.png'
+import logo from '/favicon.png'
 import './App.css'
 import Features from './Features';
 import ScrollWidget from './ScrollWidget';
@@ -6,8 +6,8 @@ import ScrollWidget from './ScrollWidget';
 function App() {
 
   return (<>
+    <ScrollWidget/>
     <div className="content">
-      <ScrollWidget/>
       <div>
         <img src={logo} className="logo" alt="Kuphack logo" />
         <h1 className="title">Kuphack</h1>
