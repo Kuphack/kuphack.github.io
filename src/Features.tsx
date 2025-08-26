@@ -5,6 +5,7 @@ import friends from '/feature/friends.png'
 import playerList from '/feature/player-list.png'
 
 import { useMobile } from './utils'
+import type { ReactNode } from 'react'
 
 function Features() {
 
@@ -22,11 +23,12 @@ function Features() {
   )
 }
 
-function Feature({title, description, img} : {title: string, description: string, img: string}) {
+function Feature({title, description, img, children} : {title: string, description: string, img: string, children?: ReactNode}) {
   const mobile = useMobile();
   return <div style={{display:"flex", height:"100vh", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
     <h1>{title}</h1>
     <h2>{description}</h2>
+    {children}
     <img style={{marginTop:32, width:mobile ? "100vw" : "60vw"}} src={img}/>
   </div>
 }

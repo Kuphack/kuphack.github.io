@@ -18,7 +18,7 @@ function App() {
       <div style={{margin:32}}>
         <div style={{display:"flex", flexDirection:"column"}}>
           <a href="https://download.kuphack.cc" className="button cta" style={{margin:40}}>
-              <span><i className="fa-solid fa-download"/> Download</span>
+              <span><i className="fa-solid fa-download"/> Download <small>(1.21.8)</small></span>
           </a>
         </div>
         <div style={{display:"flex", gap:32}}>
